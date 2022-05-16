@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -24,5 +25,7 @@ public class Cargo {
     @JoinColumn(name = "id_departamento_fk" )
     private Departamento departamento;
 
+    @OneToMany(mappedBy = "cargo")
+    private List<Funcionario> funcionarios;
 
 }
